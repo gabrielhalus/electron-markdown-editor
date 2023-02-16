@@ -1,4 +1,4 @@
 ## 👀 Overview
 
-📦 Markdown editor application
+📦 Markdown editor application  
 🌱 Easily extendable and customizable
