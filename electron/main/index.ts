@@ -40,10 +40,11 @@ const indexHtml = join(process.env.DIST, 'index.html');
 
 async function createWindow() {
   win = new BrowserWindow({
-    title: 'Electron Vite React Application',
-    icon: join(process.env.PUBLIC, 'favicon.ico'),
+    // frame: false,
+    titleBarStyle: 'hidden',
     vibrancy: 'under-window',
     visualEffectState: 'active',
+    trafficLightPosition: { x: 18, y: 18 },
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production

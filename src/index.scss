@@ -1,90 +1,185 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: SF Pro, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: transparent;
+  --dark-opaque: hsl(0, 0%, 18%);
+  --light-opaque: hsl(0, 0%, 90%);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --dark-opaque-label-color: hsla(0, 0%, 100%, 0.85);
+  --dark-opaque-secondary-label-color: hsla(0, 0%, 100%, 0.55);
+  --dark-opaque-tertiary-label-color: hsla(0, 0%, 100%, 0.25);
+
+  --dark-vibrant-label-color: hsla(0, 0%, 100%, 0.85);
+  --dark-vibrant-secondary-label-color: hsla(0, 0%, 100%, 0.55);
+  --dark-vibrant-tertiary-label-color: hsla(0, 0%, 100%, 0.25);
+
+  --dark-opaque-tint-default: #0a84ff;
+  --dark-opaque-tint-system-red: #ff453a;
+  --dark-opaque-tint-system-orange: #ff9f0a;
+  --dark-opaque-tint-system-yellow: #ffd60a;
+  --dark-opaque-tint-system-green: #32d74b;
+  --dark-opaque-tint-system-mint: #66d4cf;
+  --dark-opaque-tint-system-teal: #6ac4dc;
+  --dark-opaque-tint-system-cyan: #5ac8f5;
+  --dark-opaque-tint-system-blue: #0a84ff;
+  --dark-opaque-tint-system-indigo: #5e5ce6;
+  --dark-opaque-tint-system-purple: #bf5af2;
+  --dark-opaque-tint-system-pink: #ff375f;
+  --dark-opaque-tint-system-brown: #ac8e68;
+  --dark-opaque-tint-system-gray: #98989d;
+
+  --light-opaque-tint-default: #007aff;
+  --light-opaque-tint-system-red: #ff3b30;
+  --light-opaque-tint-system-orange: #ff9500;
+  --light-opaque-tint-system-yellow: #ffcc00;
+  --light-opaque-tint-system-green: #28cd41;
+  --light-opaque-tint-system-mint: #00c7be;
+  --light-opaque-tint-system-teal: #59adc4;
+  --light-opaque-tint-system-cyan: #55bef0;
+  --light-opaque-tint-system-blue: #007aff;
+  --light-opaque-tint-system-indigo: #5856d6;
+  --light-opaque-tint-system-purple: #af52de;
+  --light-opaque-tint-system-pink: #ff2d55;
+  --light-opaque-tint-system-brown: #a2845e;
+  --light-opaque-tint-system-gray: #8e8e93;
+
+  --dark-vibrant-tint-default: #148eff;
+  --dark-vibrant-tint-system-red: #ff4f44;
+  --dark-vibrant-tint-system-orange: #ffa914;
+  --dark-vibrant-tint-system-yellow: #ffe014;
+  --dark-vibrant-tint-system-green: #3ce155;
+  --dark-opaque-tint-system-mint: #6ce0db;
+  --dark-opaque-tint-system-teal: #44d4fa;
+  --dark-opaque-tint-system-cyan: #5acdfa;
+  --dark-opaque-tint-system-blue: #148eff;
+  --dark-opaque-tint-system-indigo: #6361f2;
+  --dark-opaque-tint-system-purple: #cc65ff;
+  --dark-opaque-tint-system-pink: #ff4169;
+  --dark-opaque-tint-system-brown: #b69872;
+  --dark-opaque-tint-system-gray: #a2a2a7;
+
+  --light-vibrant-tint-default: #0070f5;
+  --light-vibrant-tint-system-red: #0070f5;
+  --light-vibrant-tint-system-orange: #f58b00;
+  --light-vibrant-tint-system-yellow: #f5c200;
+  --light-vibrant-tint-system-green: #1ec337;
+  --light-opaque-tint-system-mint: #00bdb4;
+  --light-opaque-tint-system-teal: #2ea7bd;
+  --light-opaque-tint-system-cyan: #41afdc;
+  --light-opaque-tint-system-blue: #0070f5;
+  --light-opaque-tint-system-indigo: #5452cc;
+  --light-opaque-tint-system-purple: #9f4bc9;
+  --light-opaque-tint-system-pink: #f5234b;
+  --light-opaque-tint-system-brown: #987a54;
+  --light-opaque-tint-system-gray: #848489;
+
+  // System Colors
+  --opaque: var(--dark-opaque);
+
+  --opaque-label-color: var(--dark-opaque-label-color);
+  --opaque-secondary-label-color: var(--dark-opaque-secondary-label-color);
+  --opaque-tertiary-label-color: var(--dark-opaque-tertiary-label-color);
+
+  --vibrant-label-color: var(--dark-vibrant-label-color);
+  --vibrant-secondary-label-color: var(--dark-vibrant-secondary-label-color);
+  --vibrant-tertiary-label-color: var(--dark-vibrant-tertiary-label-color);
+
+  --opaque-tint-default: var(--dark-opaque-tint-default);
+  --opaque-tint-system-red: var(--dark-opaque-tint-system-red);
+  --opaque-tint-system-orange: var(--dark-opaque-tint-system-orange);
+  --opaque-tint-system-yellow: var(--dark-opaque-tint-system-yellow);
+  --opaque-tint-system-green: var(--dark-opaque-tint-system-green);
+
+  --vibrant-tint-default: var(--dark-vibrant-tint-default);
+  --vibrant-tint-system-red: var(--dark-vibrant-tint-system-red);
+  --vibrant-tint-system-orange: var(--dark-vibrant-tint-system-orange);
+  --vibrant-tint-system-yellow: var(--dark-vibrant-tint-system-yellow);
+  --vibrant-tint-system-green: var(--dark-vibrant-tint-system-green);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+*,
+::before,
+::after {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#App {
+  font-size: 1.6rem;
+
   min-height: 100vh;
+
+  display: flex;
+  flex-flow: row nowrap;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#Titlebar {
+  width: 100%;
+  height: 52px;
+
+  -webkit-app-region: drag;
+
+  position: fixed;
+  top: 0;
+
+  padding-inline: 12px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#Sidebar {
+  padding-top: 52px;
+
+  user-select: none;
+
+  width: 280px;
+  min-height: 100%;
+  background: transparent;
+  border-right: 1px solid black;
 }
 
-code {
-  background-color: #1a1a1a;
-  padding: 2px 4px;
-  margin: 0 4px;
-  border-radius: 4px;
+#Main {
+  padding-top: 52px;
+
+  flex: 1;
+  min-height: 100%;
+  background: var(--opaque);
 }
 
-.card {
-  padding: 2em;
-}
+.headline {
+  font-weight: 700;
+  font-size: 1.3rem;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  color: var(--dark-opaque-label-color);
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  &.headline--secondary {
+    color: var(--dark-opaque-secondary-label-color);
   }
-  a:hover {
-    color: #747bff;
+
+  &.headline--tertiary {
+    color: var(--dark-opaque-tertiary-label-color);
   }
-  button {
-    background-color: #f9f9f9;
+
+  &.headline--vibrant {
+    color: var(--dark-vibrant-label-color);
+
+    &.headline--secondary {
+      color: var(--dark-vibrant-secondary-label-color);
+    }
+
+    &.headline--tertiary {
+      color: var(--dark-vibrant-tertiary-label-color);
+    }
   }
-  code {
-    background-color: #f9f9f9;
+
+  &.headline--heavy {
+    font-weight: 800;
   }
 }
+
+// TODO: light theme colors

@@ -1,45 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+// TODO: Refaire boutons pour plusieurs styles
+.btn {
+  user-select: none;
+  color: var(--opaque-secondary-label-color);
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+  background: none;
+  border: none;
+  outline: none;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  font-family: SF Pro;
+  font-size: 1.6rem;
+  font-weight: 300;
+
+  height: 28px;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+
+  &:hover {
+    background: #ffffff0d;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+#Explorer {
+  margin-left: 24px;
+  list-style: none;
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.flex-center {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-flow: column nowrap;
+  row-gap: 8px;
+
+  .Explorer__Item {
+    cursor: pointer;
+
+    font-size: 1.3rem;
+    color: var(--vibrant-label-color);
+
+    .Item__Icon {
+      margin-right: 5px;
+
+      &.dir {
+        color: var(--vibrant-tint-default);
+      }
+
+      &.file {
+        color: var(--vibrant-secondary-label-color);
+      }
+    }
+  }
 }
